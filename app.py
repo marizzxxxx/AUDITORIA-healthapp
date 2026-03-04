@@ -3,10 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.set_page_config(page_title="Dashboard HealthApp", layout="wide", page_icon="📈")
+st.set_page_config(page_title="Dashboard HealthApp", layout="wide")
 
 with st.sidebar:
-    st.title("🎓 Dados da Aluna")
+    st.title("Dados")
     st.markdown("---")
     st.markdown("**Aluna:** Maria Eduarda Clementino Aires")
     st.markdown("**Curso:** Sistemas de Informação")
@@ -106,4 +106,5 @@ Isso explica os picos altíssimos de atividade no horário das **22h15 até 22h1
 
 **Conclusão Final:**
 A arquitetura atual do HealthApp gera um volume excessivo e desnecessário de logs por ser um app altamente reativo a cada passo isolado. Ficar salvando cada passada individualmente no banco de dados SQLite (o que ocasiona falhas ocasionais de *bulk insert*, visíveis nos eventos raros) força o processamento de disco e drena a bateria do dispositivo. O cenário ideal seria o aplicativo acumular esses passos na memória temporária e descarregar no banco de dados em lotes maiores a cada 5 ou 10 minutos.
+
 """)
