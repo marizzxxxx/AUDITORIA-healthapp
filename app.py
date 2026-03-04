@@ -52,7 +52,7 @@ st.write("Abaixo podemos explorar os detalhes visuais do comportamento do aplica
 
 sns.set_theme(style="whitegrid", palette="pastel")
 
-aba1, aba2, aba3 = st.tabs(["Frequência de Eventos", "Erros e Exceções", "⏱Horários de Pico"])
+aba1, aba2, aba3 = st.tabs(["Frequência de Eventos", "Erros e Exceções", "Horários de Pico"])
 
 with aba1:
     st.subheader("Eventos que mais sobrecarregam o aplicativo")
@@ -108,4 +108,5 @@ Isso explica os picos altíssimos de atividade no horário das **22h15 até 22h1
 A arquitetura atual do HealthApp gera um volume excessivo e desnecessário de logs por ser um app altamente reativo a cada passo isolado. Ficar salvando cada passada individualmente no banco de dados SQLite (o que ocasiona falhas ocasionais de *bulk insert*, visíveis nos eventos raros) força o processamento de disco e drena a bateria do dispositivo. O cenário ideal seria o aplicativo acumular esses passos na memória temporária e descarregar no banco de dados em lotes maiores a cada 5 ou 10 minutos.
 
 """)
+
 
